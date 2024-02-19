@@ -1,0 +1,16 @@
+---
+- name: Package Management
+  hosts: prod
+  vars:
+    pkg: httpd
+
+  tasks:
+    - name: Install software
+      yum:
+        name: "{{ pkg }}"
+        state: latest
+
+    - name: Restarting service
+      service:
+        name: "{{ pkg }}"
+        state: started

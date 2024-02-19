@@ -1,0 +1,13 @@
+---
+ - name: my first play
+   hosts: prod
+   tasks:
+    - name: creating file in /tmp path
+      file: 
+       dest: /tmp/demo.txt
+       state: touch
+   
+    - name: creating directory in /tmp path
+      file:
+       dest: /tmp/besant
+       state: directory
